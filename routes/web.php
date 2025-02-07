@@ -17,4 +17,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
 require __DIR__.'/auth.php';
+
+Route::post('payment/create', [PayFastController::class, 'createPayment']);
+Route::get('payment/return', [PayFastController::class, 'paymentReturn']);
+Route::get('payment/cancel', [PayFastController::class, 'paymentCancel']);
