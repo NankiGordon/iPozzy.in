@@ -32,7 +32,7 @@
                     @else
                         <!-- Display the logged-in user's name and a logout button -->
                         <li class="nav-item">
-                            <span class="nav-link">Hello, {{ Auth::user()->name }}</span>
+                            <span class="nav-link"> {{ Auth::user()->name }}</span>
                         </li>
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="POST">
