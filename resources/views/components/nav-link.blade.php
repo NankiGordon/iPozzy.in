@@ -192,7 +192,7 @@
                         </form>
                     </div>
                 </div>
-    
+
                 <!-- Premium Plan -->
                 <div class="card"
                     style="width: 350px; min-height: 400px; border: 1px solid #ffc107; display: flex; flex-direction: column; margin-bottom: 20px;">
@@ -217,7 +217,7 @@
                         </form>
                     </div>
                 </div>
-    
+
                 <!-- Elite Plan -->
                 <div class="card"
                     style="width: 350px; min-height: 400px; border: 1px solid #dc3545; display: flex; flex-direction: column; margin-bottom: 20px;">
