@@ -166,97 +166,89 @@
                 <h5 class="modal-title" id="pricingModalLabel">Pricing</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <div class="container py-5">
-                    <div class="row">
-                        <!-- Basic Plan -->
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card shadow-sm border-primary d-flex flex-column" style="min-height: 400px;">
-                                <div class="card-header bg-primary text-white text-center">
-                                    <h3>Basic Plan</h3>
-                                    <p>Perfect for first-time landlords</p>
-                                </div>
-                                <div class="card-body text-center flex-grow-1">
-                                    <h4 class="card-title text-success">R50</h4>
-                                    <p class="card-text">For 30 days</p>
-                                    <ul class="list-unstyled">
-                                        <li><strong>Post Duration:</strong> 30 Days</li>
-                                        <li><strong>Listing Position:</strong> Standard</li>
-                                        <li><strong>Contact Details:</strong> Visible</li>
-                                        <li><strong>Priority Support:</strong> No</li>
-                                    </ul>
-                                    <form action="#" method="POST">
-                                        @csrf
-                                        <!-- Hidden input for the payment plan -->
-                                        <input type="hidden" name="payment_plan" value="basic">
-                                        <button type="submit" class="mt-3 btn btn-outline-primary">Choose
-                                            Plan</button>
-                                    </form>
-
-                                </div>
+        <div class="modal-body">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <!-- Basic Plan -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card shadow-sm border-primary d-flex flex-column h-100">
+                            <div class="card-header bg-primary text-white text-center">
+                                <h3>Basic Plan</h3>
+                                <p>Perfect for first-time landlords</p>
+                            </div>
+                            <div class="card-body text-center flex-grow-1 d-flex flex-column">
+                                <h4 class="card-title text-success">R50</h4>
+                                <p class="card-text">For 30 days</p>
+                                <ul class="list-unstyled flex-grow-1">
+                                    <li><strong>Post Duration:</strong> 30 Days</li>
+                                    <li><strong>Listing Position:</strong> Standard</li>
+                                    <li><strong>Contact Details:</strong> Visible</li>
+                                    <li><strong>Priority Support:</strong> No</li>
+                                </ul>
+                                <form action="#" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="payment_plan" value="basic">
+                                    <button type="submit" class="mt-auto btn btn-outline-primary w-100">Choose Plan</button>
+                                </form>
                             </div>
                         </div>
-
-                        <!-- Premium Plan -->
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card shadow-sm border-warning d-flex flex-column" style="min-height: 400px;">
-                                <div class="card-header bg-warning text-white text-center">
-                                    <h3>Premium Plan</h3>
-                                    <h4>(Recommended)</h4>
-                                    <p>For experienced landlords</p>
-                                </div>
-                                <div class="card-body text-center flex-grow-1">
-                                    <h4 class="card-title text-info">R100</h4>
-                                    <p class="card-text">For 60 days</p>
-                                    <ul class="list-unstyled">
-                                        <li><strong>Post Duration:</strong> 60 Days</li>
-                                        <li><strong>Listing Position:</strong> Featured</li>
-                                        <li><strong>Contact Details:</strong> Visible</li>
-                                        <li><strong>Priority Support:</strong> Yes</li>
-                                    </ul>
-                                    <form action="#" method="POST">
-                                        @csrf
-                                        <!-- Hidden input for the payment plan -->
-                                        <input type="hidden" name="payment_plan" value="premium">
-                                        <button type="submit" class="mt-3 btn btn-outline-primary">Choose
-                                            Plan</button>
-                                    </form>
-
-                                </div>
+                    </div>
+        
+                    <!-- Premium Plan -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card shadow-sm border-warning d-flex flex-column h-100">
+                            <div class="card-header bg-warning text-white text-center">
+                                <h3>Premium Plan</h3>
+                                <h4>(Recommended)</h4>
+                                <p>For experienced landlords</p>
+                            </div>
+                            <div class="card-body text-center flex-grow-1 d-flex flex-column">
+                                <h4 class="card-title text-info">R100</h4>
+                                <p class="card-text">For 60 days</p>
+                                <ul class="list-unstyled flex-grow-1">
+                                    <li><strong>Post Duration:</strong> 60 Days</li>
+                                    <li><strong>Listing Position:</strong> Featured</li>
+                                    <li><strong>Contact Details:</strong> Visible</li>
+                                    <li><strong>Priority Support:</strong> Yes</li>
+                                </ul>
+                                <form action="#" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="payment_plan" value="premium">
+                                    <button type="submit" class="mt-auto btn btn-outline-primary w-100">Choose Plan</button>
+                                </form>
                             </div>
                         </div>
-
-                        <!-- Elite Plan -->
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card shadow-sm border-danger d-flex flex-column" style="min-height: 400px;">
-                                <div class="card-header bg-danger text-white text-center">
-                                    <h3>Elite Plan</h3>
-                                    <p>For professional landlords</p>
-                                </div>
-                                <div class="card-body text-center flex-grow-1">
-                                    <h4 class="card-title text-danger">R200</h4>
-                                    <p class="card-text">For 90 days</p>
-                                    <ul class="list-unstyled">
-                                        <li><strong>Post Duration:</strong> 90 Days</li>
-                                        <li><strong>Listing Position:</strong> Top Position</li>
-                                        <li><strong>Contact Details:</strong> Visible</li>
-                                        <li><strong>Priority Support:</strong> Yes</li>
-                                        <li><strong>Boosted Visibility:</strong> Yes</li>
-                                    </ul>
-                                    <form action="#" method="POST">
-                                        @csrf
-                                        <!-- Hidden input for the payment plan -->
-                                        <input type="hidden" name="payment_plan" value="elite">
-                                        <button type="submit" class="mt-3 btn btn-outline-primary">Choose
-                                            Plan</button>
-                                    </form>
-
-                                </div>
+                    </div>
+        
+                    <!-- Elite Plan -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card shadow-sm border-danger d-flex flex-column h-100">
+                            <div class="card-header bg-danger text-white text-center">
+                                <h3>Elite Plan</h3>
+                                <p>For professional landlords</p>
+                            </div>
+                            <div class="card-body text-center flex-grow-1 d-flex flex-column">
+                                <h4 class="card-title text-danger">R200</h4>
+                                <p class="card-text">For 90 days</p>
+                                <ul class="list-unstyled flex-grow-1">
+                                    <li><strong>Post Duration:</strong> 90 Days</li>
+                                    <li><strong>Listing Position:</strong> Top Position</li>
+                                    <li><strong>Contact Details:</strong> Visible</li>
+                                    <li><strong>Priority Support:</strong> Yes</li>
+                                    <li><strong>Boosted Visibility:</strong> Yes</li>
+                                </ul>
+                                <form action="#" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="payment_plan" value="elite">
+                                    <button type="submit" class="mt-auto btn btn-outline-primary w-100">Choose Plan</button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
         </div>
     </div>
 </div>
