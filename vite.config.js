@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/laravel/',  // Adjust this to match your app's base path if needed
+  base: process.env.VITE_APP_URL || '/', // Use environment variable for base URL
   plugins: [
     laravel({
       input: [
@@ -13,8 +12,7 @@ export default defineConfig({
     }),
   ],
   build: {
-    // This tells Vite to output assets to 'public/build/assets/'
-    outDir: 'public/build/assets',  // Customize the output directory
+    outDir: 'public/build/assets',
     rollupOptions: {
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',
@@ -24,7 +22,3 @@ export default defineConfig({
     },
   },
 });
-
-
-
-
