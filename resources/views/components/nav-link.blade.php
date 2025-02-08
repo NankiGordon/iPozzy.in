@@ -460,7 +460,7 @@
                         <div class="card shadow-lg">
                             <div class="card-body">
                                 <h4 class="card-title text-center mb-4">User Profile</h4>
-                                <form action="{{ route('user_profile.store') }}" method="POST"
+                                <form action="{{ route('user_profile.store') }}" method="POST">
                                     <!-- Phone Number -->
                                     <div class="mb-3">
                                         <label for="phone" class="form-label">Phone Number <span
