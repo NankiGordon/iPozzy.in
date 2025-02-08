@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cr;
+
+use App\Models\UserProfile;
 use Illuminate\Http\Request;
 
 class UserProfileController extends Controller
@@ -28,13 +29,28 @@ class UserProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validate the incoming request data
+        $validated = $request->validate([
+            'phone' => 'required|string',
+            'address1' => 'required|string',
+            'address2' => 'nullable|string',
+            'suburb' => 'required|string',
+            'city' => 'nullable|string',
+            'province' => 'required|string',
+            'postal' => 'required|string',
+            'user_type' => 'required|in:tenant,landlord',
+        ]);
+
+        // Create a new profile in the database
+        UserProfile::create($validated);
+
+        return back()->with('success', 'Profile saved successfully!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(cr $cr)
+    public function show(UserProfile $userProfile)
     {
         //
     }
@@ -42,7 +58,7 @@ class UserProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(cr $cr)
+    public function edit(UserProfile $userProfile)
     {
         //
     }
@@ -50,7 +66,7 @@ class UserProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, cr $cr)
+    public function update(Request $request, UserProfile $userProfile)
     {
         //
     }
@@ -58,7 +74,7 @@ class UserProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(cr $cr)
+    public function destroy(UserProfile $userProfile)
     {
         //
     }

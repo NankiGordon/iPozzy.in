@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PayFastController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,8 +20,10 @@ Route::middleware('auth')->group(function () {
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::post('payment/create', [PayFastController::class, 'createPayment']);
 Route::get('payment/return', [PayFastController::class, 'paymentReturn']);
 Route::get('payment/cancel', [PayFastController::class, 'paymentCancel']);
+
+Route::post('/profile', [UserProfileController::class, 'store'])->name('user_profile.store');
