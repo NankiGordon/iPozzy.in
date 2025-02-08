@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="section">
+    <div class="container">
             <div class="card" style="width: 18rem;">
                 <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img"
                     aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -18,17 +18,17 @@
 
                         <!-- Bedroom Icon and Number -->
                         <span class="d-inline-flex align-items-center me-3">
-                            <i class="bi bi-house-door-fill" style="font-size: 20px;"></i>
-                            <span>2</span>
+                            <i class="fas fa-bed me-2" style="font-size: 20px;"></i>
+                            <span>2 </span>
 
                             <!-- Bathroom Icon and Number -->
                             <span class="d-inline-flex align-items-center me-3">
-                                <i class="bi bi-shower" style="font-size: 20px;"></i>
-                                <span>2</span>
+                                <i class="fas fa-bath me-2" style="font-size: 20px;"></i>
+                                <span>2 </span>
                                 <!-- Area Icon and Number -->
                                 <span class="d-inline-flex align-items-center">
                                     <i class="bi bi-square" style="font-size: 20px;"></i>
-                                    <span>200 m²</span>
+                                    <span> 200 m²</span>
                     </div>
 
                     <a href="#" class="btn btn-primary">Go somewhere</a>
