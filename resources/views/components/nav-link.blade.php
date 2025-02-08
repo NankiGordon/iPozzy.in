@@ -42,7 +42,7 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#profileModal">
+                        <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#profileModal">
                             {{ Auth::user()->name }}
                         </button>
                     </li>
@@ -95,6 +95,34 @@
                             <option>Other</option>
                         </select>
                     </div>
+
+                    <!-- Description Field -->
+                    <div class="mb-3">
+                        <label for="propertyDescription" class="form-label">Property Description</label>
+                        <textarea id="propertyDescription" class="form-control" rows="4"
+                            placeholder="Provide a detailed description of the property..."></textarea>
+                    </div>
+
+
+                        <!-- Number of Bedrooms -->
+                        <div class="mb-3">
+                            <label for="bedrooms" class="form-label">Number of Bedrooms</label>
+                            <input type="number" id="bedrooms" class="form-control" min="1" placeholder="Enter number of bedrooms" required>
+                        </div>
+
+                        <!-- Number of Bathrooms -->
+                        <div class="mb-3">
+                            <label for="numBathrooms" class="form-label">Number of Bathrooms</label>
+                            <input type="number" id="numBathrooms" class="form-control" placeholder="Enter number of bathrooms" min="1">
+                        </div>
+
+                        <!-- size -->
+                        <div class="mb-3">
+                            <label for="size" class="form-label">Size in Square Meters</label>
+                            <input type="number" id="size" class="form-control" placeholder="Enter size in m²" min="1" step="1" required>
+                        </div>
+
+
                     <!-- Amenities Checkboxes -->
                     <div class="mb-3">
                         <label class="form-label">Amenities</label><br>
