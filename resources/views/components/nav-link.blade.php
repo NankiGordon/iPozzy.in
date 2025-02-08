@@ -268,7 +268,100 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <!-- Content will go here -->
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="card shadow-lg">
+                            <div class="card-body">
+                                <h4 class="card-title text-center mb-4">User Profile</h4>
+                                <form>
+                                    <!-- Phone Number -->
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Phone Number <span
+                                                class="text-danger">*</span></label>
+                                        <input type="tel" id="phone" class="form-control" placeholder="Enter phone number" required>
+                                    </div>
+
+                                    <!-- Address Fields -->
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="address1" class="form-label">Address 1 <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" id="address1" class="form-control" placeholder="Street Address"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="address2" class="form-label">Address 2</label>
+                                            <input type="text" id="address2" class="form-control"
+                                                placeholder="Apartment, suite, etc.">
+                                        </div>
+                                    </div>
+
+                                    <!-- Suburb & City -->
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="suburb" class="form-label">Suburb <span class="text-danger">*</span></label>
+                                            <input type="text" id="suburb" class="form-control" placeholder="Enter suburb" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="city" class="form-label">City</label>
+                                            <input type="text" id="city" class="form-control" placeholder="Enter city">
+                                        </div>
+                                    </div>
+
+                                    <!-- Province & Postal Code -->
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="province" class="form-label">Province <span
+                                                    class="text-danger">*</span></label>
+                                            <div class="dropdown">
+                                                <select id="province" class="form-select">
+                                                    <option selected disabled>Choose Province</option>
+                                                    <option>Eastern Cape</option>
+                                                    <option>Free State</option>
+                                                    <option>Gauteng</option>
+                                                    <option>KwaZulu-Natal</option>
+                                                    <option>Limpopo</option>
+                                                    <option>Mpumalanga</option>
+                                                    <option>Northern Cape</option>
+                                                    <option>North West</option>
+                                                    <option>Western Cape</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="postal" class="form-label">Postal Code <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" id="postal" class="form-control" placeholder="Enter postal code"
+                                                required>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tenant / Landlord Radio Buttons -->
+                                    <div class="mb-3">
+                                        <label class="form-label d-block">User Type <span class="text-danger">*</span></label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="userType" id="tenant" value="tenant"
+                                                required>
+                                            <label class="form-check-label" for="tenant">Tenant</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="userType" id="landlord"
+                                                value="landlord">
+                                            <label class="form-check-label" for="landlord">Landlord</label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>
