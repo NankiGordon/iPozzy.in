@@ -81,19 +81,120 @@
                             <option>House</option>
                             <option>Townhouse</option>
                             <option>Commercial</option>
+                            <option>Backroom</option>
+                            <option>Shack</option>
+                            <option>Room to Rent</option>
+                            <option>Flatlet</option>
+                            <option>Garden Cottage</option>
+                            <option>Shared Accommodation</option>
+                            <option>Other</option>
                         </select>
                     </div>
+                    <!-- Amenities Checkboxes -->
+                    <div class="mb-3">
+                        <label class="form-label">Amenities</label><br>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="wifi" value="wifi">
+                            <label class="form-check-label" for="wifi">WiFi</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="parking" value="parking">
+                            <label class="form-check-label" for="parking">Parking</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="pool" value="pool">
+                            <label class="form-check-label" for="pool">Swimming Pool</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="security" value="security">
+                            <label class="form-check-label" for="security">Security</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="petFriendly" value="petFriendly">
+                            <label class="form-check-label" for="petFriendly">Pet Friendly</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="laundry" value="laundry">
+                            <label class="form-check-label" for="laundry">Laundry Facilities</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="furnished" value="furnished">
+                            <label class="form-check-label" for="furnished">Furnished</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="garden" value="garden">
+                            <label class="form-check-label" for="garden">Garden</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="electricity" value="electricity">
+                            <label class="form-check-label" for="electricity">Electricity Included</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="water" value="water">
+                            <label class="form-check-label" for="water">Water Included</label>
+                        </div>
+                    </div>
+
+                    <!-- Address Fields -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="address1" class="form-label">Address 1 <span class="text-danger">*</span></label>
+                            <input type="text" id="address1" class="form-control" placeholder="Street Address" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="address2" class="form-label">Address 2</label>
+                            <input type="text" id="address2" class="form-control" placeholder="Apartment, suite, etc.">
+                        </div>
+                    </div>
+
+                    <!-- Suburb & City -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="suburb" class="form-label">Suburb <span class="text-danger">*</span></label>
+                            <input type="text" id="suburb" class="form-control" placeholder="Enter suburb" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" id="city" class="form-control" placeholder="Enter city">
+                        </div>
+                    </div>
+
+                    <!-- Province & Postal Code -->
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="province" class="form-label">Province <span class="text-danger">*</span></label>
+                            <div class="dropdown">
+                                <select id="province" class="form-select">
+                                    <option selected disabled>Choose Province</option>
+                                    <option>Eastern Cape</option>
+                                    <option>Free State</option>
+                                    <option>Gauteng</option>
+                                    <option>KwaZulu-Natal</option>
+                                    <option>Limpopo</option>
+                                    <option>Mpumalanga</option>
+                                    <option>Northern Cape</option>
+                                    <option>North West</option>
+                                    <option>Western Cape</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="postal" class="form-label">Postal Code <span class="text-danger">*</span></label>
+                            <input type="text" id="postal" class="form-control" placeholder="Enter postal code" required>
+                        </div>
+                    </div>
+
+                    <!-- Available Date -->
+                    <div class="mb-3">
+                        <label for="availableDate" class="form-label">Available Date</label>
+                        <input type="date" id="availableDate" class="form-control">
+                    </div>
+
 
                     <!-- Price -->
                     <div class="mb-3">
                         <label for="price" class="form-label">Price</label>
                         <input type="number" id="price" class="form-control" placeholder="Enter price">
-                    </div>
-
-                    <!-- Address -->
-                    <div class="mb-3">
-                        <label for="address" class="form-label">Address</label>
-                        <input type="text" id="address" class="form-control" placeholder="Enter address">
                     </div>
 
                     <!-- Submit Button -->
