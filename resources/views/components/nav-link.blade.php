@@ -22,7 +22,7 @@
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#pricingModal">Pricing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-success" href="#" data-bs-toggle="modal" data-bs-target="#pricingModal">Create Listing</a>
+                    <a class="btn btn-outline-success" href="#" data-bs-toggle="modal" data-bs-target="#pricingModal">Create Property Listing</a>
                 </li>
             </ul>
 
