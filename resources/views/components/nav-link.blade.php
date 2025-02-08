@@ -22,7 +22,7 @@
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#pricingModal">Pricing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-success" href="#">Create Listing</a>
+                    <a class="btn btn-success" data-bs-toggle="modal" href="#createListingModal">Create Listing</a>
                 </li>
             </ul>
 
@@ -54,6 +54,58 @@
 </nav>
 
 <!-- Modals -->
+
+<!-- Modal for Create Listing -->
+<div class="modal fade" id="createListingModal" tabindex="-1" aria-labelledby="createListingModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createListingModalLabel">Create Listing</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <!-- Property Name -->
+                    <div class="mb-3">
+                        <label for="propertyName" class="form-label">Property Name</label>
+                        <input type="text" id="propertyName" class="form-control" placeholder="Enter property name">
+                    </div>
+
+                    <!-- Property Type -->
+                    <div class="mb-3">
+                        <label for="propertyType" class="form-label">Property Type</label>
+                        <select id="propertyType" class="form-select">
+                            <option selected disabled>Choose Property Type</option>
+                            <option>Apartment</option>
+                            <option>House</option>
+                            <option>Townhouse</option>
+                            <option>Commercial</option>
+                        </select>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" id="price" class="form-control" placeholder="Enter price">
+                    </div>
+
+                    <!-- Address -->
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" id="address" class="form-control" placeholder="Enter address">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Create Listing</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- About Us Modal -->
 <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
@@ -354,7 +406,7 @@
 
                                     <!-- Submit Button -->
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                                        <button type="submit" class="btn btn-outline-primary w-100">Submit</button>
                                     </div>
                                 </form>
                             </div>
