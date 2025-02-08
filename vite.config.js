@@ -3,13 +3,16 @@ import laravel from 'laravel-vite-plugin';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/laravel/',  // Adjust this to match your app's base path if needed
   plugins: [
     laravel({
       input: [
-        'resources/js/app.js',  // Your main JS file
-        'resources/css/app.css', // Your main CSS file
+        'resources/css/app.css',
+        'resources/js/app.js',
       ],
-      refresh: true,  // Enables auto-refresh when files change
     }),
   ],
 });
+
+
+
