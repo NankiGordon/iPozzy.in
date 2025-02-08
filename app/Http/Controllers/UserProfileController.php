@@ -29,7 +29,7 @@ class UserProfileController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate the incoming request data
+        // Validate the request data
         $validated = $request->validate([
             'phone' => 'required|string',
             'address1' => 'required|string',
@@ -38,15 +38,26 @@ class UserProfileController extends Controller
             'city' => 'nullable|string',
             'province' => 'required|string',
             'postal' => 'required|string',
-            'user_type' => 'required|in:tenant,landlord',
+            'user_type' => 'required|in:tenant,landlord', // Ensure user type is either tenant or landlord
+            'user_id' => 'required|exists:users,id', // Validate that user exists
         ]);
 
-        // Create a new profile in the database
-        UserProfile::create($validated);
+        // Create a new profile and associate it with the user
+        $userProfile = UserProfile::create([
+            'user_id' => $validated['user_id'], // Ensure the user ID is associated
+            'phone' => $validated['phone'],
+            'address1' => $validated['address1'],
+            'address2' => $validated['address2'],
+            'suburb' => $validated['suburb'],
+            'city' => $validated['city'],
+            'province' => $validated['province'],
+            'postal' => $validated['postal'],
+            'user_type' => $validated['user_type'],
+        ]);
 
-        return back()->with('success', 'Profile saved successfully!');
+        // Optionally, return a response
+        return response()->json(['message' => 'Profile created successfully!', 'profile' => $userProfile]);
     }
-
     /**
      * Display the specified resource.
      */

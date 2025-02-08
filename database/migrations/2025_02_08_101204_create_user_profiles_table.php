@@ -8,10 +8,11 @@ return new class extends Migration {
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('user_profiles', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Add this line for the foreign key
             $table->string('phone');
             $table->string('address1');
             $table->string('address2')->nullable();
@@ -23,6 +24,7 @@ return new class extends Migration {
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
