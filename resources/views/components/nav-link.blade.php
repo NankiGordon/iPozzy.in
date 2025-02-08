@@ -160,12 +160,12 @@
 
 <!-- Pricing Modal -->
 <div class="modal fade" id="pricingModal" tabindex="-1" aria-labelledby="pricingModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-dialog modal-xl">
     <div class="modal-body">
         <div class="container py-5">
             <div class="row">
                 <!-- Basic Plan -->
-                <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                <div class="col-lg-3  col-sm-12 mb-4">
                     <div class="card shadow-sm border-primary d-flex flex-column" style="min-height: 400px;">
                         <div class="card-header bg-primary text-white text-center">
                             <h3>Basic Plan</h3>
@@ -190,7 +190,7 @@
                 </div>
 
                 <!-- Premium Plan -->
-                <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                <div class="col-lg-3  col-sm-12 mb-4">
                     <div class="card shadow-sm border-warning d-flex flex-column" style="min-height: 400px;">
                         <div class="card-header bg-warning text-white text-center">
                             <h3>Premium Plan</h3>
@@ -216,7 +216,7 @@
                 </div>
 
                 <!-- Elite Plan -->
-                <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                <div class="col-lg-3  col-sm-12 mb-4">
                     <div class="card shadow-sm border-danger d-flex flex-column" style="min-height: 400px;">
                         <div class="card-header bg-danger text-white text-center">
                             <h3>Elite Plan</h3>
