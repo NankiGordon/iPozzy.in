@@ -22,7 +22,11 @@
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#pricingModal">Pricing</a>
                 </li>
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a class="btn btn-outline-success" href="#" >Create Property Listing</a>
+=======
+                    <a class="btn btn-outline-success" href="#" data-bs-toggle="modal" data-bs-target="#pricingModal">Create Property Listing</a>
+>>>>>>> 62b67fc (Update nav-link.blade.php)
                 </li>
             </ul>
 
