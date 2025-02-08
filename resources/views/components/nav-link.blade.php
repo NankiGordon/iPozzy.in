@@ -21,9 +21,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#pricingModal">Pricing</a>
                 </li>
-                <li class="nav-item">
+            <li class="nav-item">
+                @if(Auth::check()) <!-- Check if user is logged in -->
                     <a class="btn btn-success" data-bs-toggle="modal" href="#createListingModal">Create Listing</a>
-                </li>
+                @else <!-- If user is not logged in -->
+                    <a class="btn btn-success" href="{{ route('login') }}">Create Listing</a>
+                @endif
+            </li>
+
             </ul>
 
             <!-- Right-aligned links for guest users -->
