@@ -12,7 +12,19 @@ export default defineConfig({
       ],
     }),
   ],
+  build: {
+    // This tells Vite to output assets to 'public/build/assets/'
+    outDir: 'public/build/assets',  // Customize the output directory
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+      },
+    },
+  },
 });
+
 
 
 
