@@ -11,12 +11,17 @@
 
 <body>
     <!-- Navbar -->
-<x-nav-link />
+    <x-nav-link />
 
     {{ $slot }}
+
+    <!-- Include Bootstrap's JS (already included) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <!-- Include Custom App.js Compiled by Laravel Mix -->
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 
 </html>
