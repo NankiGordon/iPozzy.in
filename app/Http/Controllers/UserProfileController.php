@@ -32,13 +32,13 @@ class UserProfileController extends Controller
         // Validate the incoming request data
         $validated = $request->validate([
             'phone' => 'required|string',
-            'address1' => 'required|string',
-            'address2' => 'nullable|string',
-            'suburb' => 'required|string',
-            'city' => 'nullable|string',
-            'province' => 'required|string',
-            'postal' => 'required|string',
-            'user_type' => 'required|in:tenant,landlord',
+            // 'address1' => 'required|string',
+            // 'address2' => 'nullable|string',
+            // 'suburb' => 'required|string',
+            // 'city' => 'nullable|string',
+            // 'province' => 'required|string',
+            // 'postal' => 'required|string',
+            // 'user_type' => 'required|in:tenant,landlord',
             'user_id' => 'required|exists:users,id', // Validate that user exists
         ]);
 

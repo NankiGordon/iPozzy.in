@@ -11,13 +11,13 @@ class UserProfile extends Model
     protected $fillable = [
         'user_id', // Add user_id to the fillable array
         'phone',
-        'address1',
-        'address2',
-        'suburb',
-        'city',
-        'province',
-        'postal',
-        'user_type',
+        // 'address1',
+        // 'address2',
+        // 'suburb',
+        // 'city',
+        // 'province',
+        // 'postal',
+        // 'user_type',
     ];
 
     // Define the inverse relationship: each profile belongs to a user
