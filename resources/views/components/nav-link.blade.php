@@ -486,7 +486,7 @@
                                 </div> --}}
 
                                 <!-- Suburb & City -->
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="suburb" class="form-label">Suburb <span class="text-danger">*</span></label>
                                         <input type="text" id="suburb" name="suburb" class="form-control"
@@ -496,7 +496,7 @@
                                         <label for="city" class="form-label">City</label>
                                         <input type="text" id="city" name="city" class="form-control" placeholder="Enter city">
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Province & Postal Code -->
                                 {{-- <div class="row">
