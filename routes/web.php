@@ -26,4 +26,4 @@ Route::post('payment/create', [PayFastController::class, 'createPayment']);
 Route::get('payment/return', [PayFastController::class, 'paymentReturn']);
 Route::get('payment/cancel', [PayFastController::class, 'paymentCancel']);
 
-Route::post('/profile', [UserProfileController::class, 'store'])->name('user_profile.store');
+Route::post('/user-profile', [UserProfileController::class, 'store'])->name('user_profile.store');
