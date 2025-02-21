@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Listing extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'user_id',
         'property_name',
@@ -25,10 +26,15 @@ class Listing extends Model
         'postal',
         'available_date',
         'price',
-        'images'
+        'image1',  // New field for first image
+        'image2',  // New field for second image
+        'image3',  // New field for third image
+        'image4',  // New field for fourth image
+        'image5',  // New field for fifth image
+        'image6',  // New field for sixth image
     ];
+
     protected $casts = [
-        'amenities' => 'array',
-        'images' => 'array', // Make sure images are stored as an array
+        'amenities' => 'array', // Cast amenities as an array, no need to cast images
     ];
 }

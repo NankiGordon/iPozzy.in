@@ -36,22 +36,25 @@ class ListingController extends Controller
             'postal' => 'required|string',
             'available_date' => 'nullable|date',
             'price' => 'required|numeric|min:0',
-            'images' => 'nullable|array', // Validate images
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Allow specific image formats
+            'image1' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image4' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image5' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $validated['user_id'] = Auth::id(); // Automatically assign the logged-in user
         $validated['amenities'] = json_encode($request->amenities); // Store amenities as JSON
 
         // Handle image uploads
-        if ($request->hasFile('images')) {
-            $imagePaths = [];
-            foreach ($request->file('images') as $image) {
-                // Store the image in the 'public_html/listing_img' directory
-                $path = $image->storeAs('listing_img', $image->getClientOriginalName(), 'public');
-                $imagePaths[] = $path; // Save each image path
+        foreach (range(1, 6) as $i) {
+            $imageField = 'image' . $i;
+            if ($request->hasFile($imageField)) {
+                // Store the image in the 'listing_img' directory
+                $path = $request->file($imageField)->storeAs('images', $request->file($imageField)->getClientOriginalName(), 'public');
+                $validated[$imageField] = $path; // Store each image path in its respective field
             }
-            $validated['images'] = $imagePaths; // Store image paths as an array (no need to encode as JSON)
         }
 
         // Create the listing with validated data
@@ -59,4 +62,5 @@ class ListingController extends Controller
 
         return back()->with('success', 'Listing created successfully!');
     }
+
 }

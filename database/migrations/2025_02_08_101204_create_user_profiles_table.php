@@ -21,10 +21,16 @@ return new class extends Migration {
             $table->string('province');
             $table->string('postal');
             $table->enum('user_type', ['tenant', 'landlord']);
+            // Add individual image fields
+            $table->string('image1')->nullable();
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
+            $table->string('image4')->nullable();
+            $table->string('image5')->nullable();
+            $table->string('image6')->nullable();
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.

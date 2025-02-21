@@ -231,10 +231,15 @@
                     <label for="price" class="form-label">Price</label>
                     <input type="number" id="price" name="price" class="form-control" placeholder="Enter price">
                 </div>
-               <!-- Property Images (Preview with Remove Button) -->
+              <!-- Property Images (Preview with Remove Button) -->
 <div class="mb-3">
     <label for="propertyImages" class="form-label">Property Images</label>
-    <input type="file" name="images[]" id="propertyImages" class="form-control" accept="image/*" multiple onchange="previewImages(event)">
+    <input type="file" name="image1" id="image1" class="form-control" accept="image/*" onchange="previewImage(event, 'image1')">
+    <input type="file" name="image2" id="image2" class="form-control" accept="image/*" onchange="previewImage(event, 'image2')">
+    <input type="file" name="image3" id="image3" class="form-control" accept="image/*" onchange="previewImage(event, 'image3')">
+    <input type="file" name="image4" id="image4" class="form-control" accept="image/*" onchange="previewImage(event, 'image4')">
+    <input type="file" name="image5" id="image5" class="form-control" accept="image/*" onchange="previewImage(event, 'image5')">
+    <input type="file" name="image6" id="image6" class="form-control" accept="image/*" onchange="previewImage(event, 'image6')">
 </div>
 <div id="imagePreviews" class="d-flex flex-wrap"></div>
 
@@ -242,16 +247,14 @@
 <div class="text-center">
     <button type="submit" class="btn btn-primary">Create Listing</button>
 </div>
-</form>
 
 <script>
-    // Function to preview images and display close button
-    function previewImages(event) {
-        const files = event.target.files;
+    // Function to preview individual image and display a close button
+    function previewImage(event, imageId) {
+        const file = event.target.files[0];
         const previewContainer = document.getElementById('imagePreviews');
 
-        // Loop through all selected files
-        Array.from(files).forEach(file => {
+        if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
                 const imgPreview = document.createElement('div');
@@ -261,11 +264,12 @@
                     <button type="button" class="close position-absolute top-0 end-0" style="font-size: 18px;" onclick="removeImage(this)">
                         &times;
                     </button>
+                    <input type="hidden" name="${imageId}" value="${e.target.result}" />
                 `;
                 previewContainer.appendChild(imgPreview);
             };
             reader.readAsDataURL(file);
-        });
+        }
     }
 
     // Function to remove image preview
