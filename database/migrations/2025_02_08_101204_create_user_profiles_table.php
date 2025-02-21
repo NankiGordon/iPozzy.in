@@ -14,13 +14,13 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Add this line for the foreign key
             $table->string('phone');
-            // $table->string('address1');
-            // $table->string('address2')->nullable();
-            // $table->string('suburb');
-            // $table->string('city')->nullable();
-            // $table->string('province');
-            // $table->string('postal');
-            // $table->enum('user_type', ['tenant', 'landlord']);
+            $table->string('address1');
+            $table->string('address2')->nullable();
+            $table->string('suburb');
+            $table->string('city')->nullable();
+            $table->string('province');
+            $table->string('postal');
+            $table->enum('user_type', ['tenant', 'landlord']);
             $table->timestamps();
         });
     }
