@@ -11,7 +11,10 @@ class ListingController extends Controller
 
     public function index()
     {
-        $listings = Listing::latest()->take(10)->get();
+        // Fetch all listings
+        $listings = Listing::all();
+
+        // Pass data to the view
         return view('welcome', compact('listings'));
     }
     public function store(Request $request)
