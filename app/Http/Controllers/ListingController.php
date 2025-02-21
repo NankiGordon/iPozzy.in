@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ListingController extends Controller
 {
-
     public function index()
     {
         // Fetch all listings
@@ -17,6 +17,7 @@ class ListingController extends Controller
         // Pass data to the view
         return view('welcome', compact('listings'));
     }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -46,8 +47,8 @@ class ListingController extends Controller
         if ($request->hasFile('images')) {
             $imagePaths = [];
             foreach ($request->file('images') as $image) {
-                // Store the image in the 'public/images' directory
-                $path = $image->store('images', 'public');
+                // Store the image in the 'public_html/listing_img' directory
+                $path = $image->storeAs('listing_img', $image->getClientOriginalName(), 'public');
                 $imagePaths[] = $path; // Save each image path
             }
             $validated['images'] = $imagePaths; // Store image paths as an array (no need to encode as JSON)
