@@ -25,7 +25,7 @@ return new class extends Migration {
             $table->string('postal');
             $table->date('available_date')->nullable();
             $table->decimal('price', 10, 2);
-            $table->json('images')->nullable(); // Store images as a JSON array
+            // $table->json('images')->nullable(); // Store images as a JSON array
             $table->timestamps();
         });
     }
