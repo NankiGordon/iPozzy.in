@@ -70,7 +70,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <form action="{{ route('listings.store') }}" method="POST">
+            <form action="{{ route('listings.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <!-- Property Name -->
                 <div class="mb-3">
@@ -231,18 +231,49 @@
                     <label for="price" class="form-label">Price</label>
                     <input type="number" id="price" name="price" class="form-control" placeholder="Enter price">
                 </div>
-                <!-- Property Images -->
+                <!-- Property Images (Preview with Remove Button) -->
                 <div class="mb-3">
                     <label for="propertyImages" class="form-label">Property Images</label>
-                    <input type="file" name="images[]" id="propertyImages" class="form-control" accept="image/*" multiple>
+                    <input type="file" name="images[]" id="propertyImages" class="form-control" accept="image/*" multiple
+                        onchange="previewImages(event)">
                 </div>
-
+                <div id="imagePreviews" class="d-flex flex-wrap"></div>
 
                 <!-- Submit Button -->
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Create Listing</button>
                 </div>
-            </form>
+                </form>
+
+                <script>
+                    // Function to preview images and display close button
+                    function previewImages(event) {
+                        const files = event.target.files;
+                        const previewContainer = document.getElementById('imagePreviews');
+                        previewContainer.innerHTML = ''; // Clear previous previews
+
+                        Array.from(files).forEach(file => {
+                            const reader = new FileReader();
+                            reader.onload = function (e) {
+                                const imgPreview = document.createElement('div');
+                                imgPreview.classList.add('position-relative', 'm-2');
+                                imgPreview.innerHTML = `
+                                <img src="${e.target.result}" class="img-thumbnail" width="100" height="100" />
+                                <button type="button" class="close position-absolute top-0 end-0" style="font-size: 18px;" onclick="removeImage(this)">
+                                    &times;
+                                </button>
+                            `;
+                                previewContainer.appendChild(imgPreview);
+                            };
+                            reader.readAsDataURL(file);
+                        });
+                    }
+
+                    // Function to remove image preview
+                    function removeImage(button) {
+                        button.parentElement.remove();
+                    }
+                </script>
             </div>
         </div>
     </div>
