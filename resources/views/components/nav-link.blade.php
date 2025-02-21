@@ -231,6 +231,12 @@
                     <label for="price" class="form-label">Price</label>
                     <input type="number" id="price" name="price" class="form-control" placeholder="Enter price">
                 </div>
+                <!-- Property Images -->
+                <div class="mb-3">
+                    <label for="propertyImages" class="form-label">Property Images</label>
+                    <input type="file" name="images[]" id="propertyImages" class="form-control" accept="image/*" multiple>
+                </div>
+
 
                 <!-- Submit Button -->
                 <div class="text-center">

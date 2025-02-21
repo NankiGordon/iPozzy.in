@@ -26,10 +26,23 @@ class ListingController extends Controller
             'postal' => 'required|string',
             'available_date' => 'nullable|date',
             'price' => 'required|numeric|min:0',
+            'images' => 'nullable|array', // Validate images
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Allow specific image formats
         ]);
 
         $validated['user_id'] = Auth::id(); // Automatically assign the logged-in user
         $validated['amenities'] = json_encode($request->amenities); // Store amenities as JSON
+
+        // Handle image uploads
+        if ($request->hasFile('images')) {
+            $imagePaths = [];
+            foreach ($request->file('images') as $image) {
+                // Store the image in the 'public/images' directory
+                $path = $image->store('images', 'public');
+                $imagePaths[] = $path; // Save each image path
+            }
+            $validated['images'] = json_encode($imagePaths); // Store image paths as JSON
+        }
 
         Listing::create($validated);
         return back()->with('success', 'Listing created successfully!');
