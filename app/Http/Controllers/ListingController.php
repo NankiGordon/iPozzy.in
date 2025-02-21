@@ -4,62 +4,34 @@ namespace App\Http\Controllers;
 
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ListingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $validated = $request->validate([
+            'property_name' => 'required|string',
+            'property_type' => 'required|string',
+            'description' => 'nullable|string',
+            'bedrooms' => 'required|integer|min:1',
+            'bathrooms' => 'nullable|integer|min:0',
+            'size' => 'required|integer|min:1',
+            'amenities' => 'nullable|array',
+            'address1' => 'required|string',
+            'address2' => 'nullable|string',
+            'suburb' => 'required|string',
+            'city' => 'nullable|string',
+            'province' => 'required|string',
+            'postal' => 'required|string',
+            'available_date' => 'nullable|date',
+            'price' => 'required|numeric|min:0',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Listing $listing)
-    {
-        //
-    }
+        $validated['user_id'] = Auth::id(); // Automatically assign the logged-in user
+        $validated['amenities'] = json_encode($request->amenities); // Store amenities as JSON
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Listing $listing)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Listing $listing)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Listing $listing)
-    {
-        //
+        Listing::create($validated);
+        return back()->with('success', 'Listing created successfully!');
     }
 }
