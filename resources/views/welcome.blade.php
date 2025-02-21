@@ -11,7 +11,7 @@
                                 @endphp
 
                                 @if (!empty($images) && is_array($images))
-                                    <img src="{{ asset('storage/' . $images[0]) }}" class="card-img-top" alt="Property Image">
+                                    <img src="{{ asset('/laravel/storage/app/public/images/' . $images[0]) }}" class="card-img-top" alt="Property Image">
                                 @else
                                     <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
                                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap"
@@ -24,7 +24,7 @@
 
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $listing->city }}</h5>
-                                    <h6>R{{ number_format($listing->price, 2) }}</h6>
+                                    <h6>R{{ number_format($listing->price, 2) }} p/m</h6>
                                     <p class="card-text" id="cardText">{{ $listing->description }}</p>
                                     <button class="btn btn-outline-info btn-sm" id="showMoreBtn" onclick="toggleText()">Show
                                         More</button>
