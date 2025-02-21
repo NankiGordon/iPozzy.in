@@ -471,7 +471,7 @@
                                 </div>
 
                                 <!-- Address Fields -->
-                                {{-- <div class="row">
+                                <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="address1" class="form-label">Address 1 <span
                                                 class="text-danger">*</span></label>
@@ -483,10 +483,10 @@
                                         <input type="text" id="address2" name="address2" class="form-control"
                                             placeholder="Apartment, suite, etc.">
                                     </div>
-                                </div> --}}
+                                </div>
 
                                 <!-- Suburb & City -->
-                                {{-- <div class="row">
+                                <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="suburb" class="form-label">Suburb <span class="text-danger">*</span></label>
                                         <input type="text" id="suburb" name="suburb" class="form-control"
@@ -496,10 +496,10 @@
                                         <label for="city" class="form-label">City</label>
                                         <input type="text" id="city" name="city" class="form-control" placeholder="Enter city">
                                     </div>
-                                </div> --}}
+                                </div>
 
                                 <!-- Province & Postal Code -->
-                                {{-- <div class="row">
+                                <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="province" class="form-label">Province <span
                                                 class="text-danger">*</span></label>
@@ -524,10 +524,10 @@
                                         <input type="text" id="postal" name="postal" class="form-control"
                                             placeholder="Enter postal code" required>
                                     </div>
-                                </div> --}}
+                                </div>
 
                                 <!-- Tenant / Landlord Radio Buttons -->
-                                {{-- <div class="mb-3">
+                                <div class="mb-3">
                                     <label class="form-label d-block">User Type <span class="text-danger">*</span></label>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="user_type" id="tenant" value="tenant"
@@ -539,7 +539,7 @@
                                             value="landlord">
                                         <label class="form-check-label" for="landlord">Landlord</label>
                                     </div>
-                                </div> --}}
+                                </div>
 
                                 <!-- Submit Button -->
                                 <div class="text-center">
