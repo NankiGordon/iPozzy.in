@@ -244,35 +244,7 @@
 </div>
 </form>
 
-<script>
-    // Function to preview images and display close button
-    function previewImages(event) {
-        const files = event.target.files;
-        const previewContainer = document.getElementById('imagePreviews');
 
-        // Loop through all selected files
-        Array.from(files).forEach(file => {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const imgPreview = document.createElement('div');
-                imgPreview.classList.add('position-relative', 'm-2');
-                imgPreview.innerHTML = `
-                    <img src="${e.target.result}" class="img-thumbnail" width="100" height="100" />
-                    <button type="button" class="close position-absolute top-0 end-0" style="font-size: 18px;" onclick="removeImage(this)">
-                        &times;
-                    </button>
-                `;
-                previewContainer.appendChild(imgPreview);
-            };
-            reader.readAsDataURL(file);
-        });
-    }
-
-    // Function to remove image preview
-    function removeImage(button) {
-        button.parentElement.remove();
-    }
-</script>
 
             </div>
         </div>
