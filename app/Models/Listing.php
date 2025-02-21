@@ -25,10 +25,10 @@ class Listing extends Model
         'postal',
         'available_date',
         'price',
-        // 'images'
+        'images'
     ];
     protected $casts = [
         'amenities' => 'array',
-        //'images' => 'array', // Make sure images are stored as an array
+        'images' => 'array', // Make sure images are stored as an array
     ];
 }
