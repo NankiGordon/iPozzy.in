@@ -2,28 +2,12 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\UserProfile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserProfileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -32,6 +16,7 @@ class UserProfileController extends Controller
         // Validate the incoming request data
         $validated = $request->validate([
             'phone' => 'required|string',
+            // Uncomment these if needed
             // 'address1' => 'required|string',
             // 'address2' => 'nullable|string',
             // 'suburb' => 'required|string',
@@ -39,44 +24,14 @@ class UserProfileController extends Controller
             // 'province' => 'required|string',
             // 'postal' => 'required|string',
             // 'user_type' => 'required|in:tenant,landlord',
-            'user_id' => 'required|exists:users,id', // Validate that user exists
         ]);
+
+        // Assign the authenticated user's ID
+        $validated['user_id'] = Auth::id();
 
         // Create a new profile in the database
         UserProfile::create($validated);
 
-        return back()->with('success', 'Profile saved successfully!');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(UserProfile $userProfile)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(UserProfile $userProfile)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, UserProfile $userProfile)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(UserProfile $userProfile)
-    {
-        //
+        return redirect()->back()->with('success', 'Profile saved successfully!');
     }
 }
