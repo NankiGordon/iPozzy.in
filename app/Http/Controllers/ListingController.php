@@ -41,10 +41,12 @@ class ListingController extends Controller
                 $path = $image->store('images', 'public');
                 $imagePaths[] = $path; // Save each image path
             }
-            $validated['images'] = json_encode($imagePaths); // Store image paths as JSON
+            $validated['images'] = $imagePaths; // Store image paths as an array (no need to encode as JSON)
         }
 
+        // Create the listing with validated data
         Listing::create($validated);
+
         return back()->with('success', 'Listing created successfully!');
     }
 }
