@@ -15,7 +15,7 @@
                     bulk of
                     the card's content.</p>
                 <button class="btn btn-outline-info btn-sm" id="showMoreBtn" onclick="toggleText()">Show More</button>
-                <p><strong>Bedrooms:</strong> 2</p>
+                <p><strong>Bedrooms:</strong> {{ $listing->bedrooms }}</p>
                 <p><strong>Bathrooms:</strong> 2</p>
                 <p><strong>Size:</strong> 2 m²</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
