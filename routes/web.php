@@ -6,9 +6,10 @@ use App\Http\Controllers\PayFastController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserProfileController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [ListingController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

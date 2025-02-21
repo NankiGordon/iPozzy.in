@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class ListingController extends Controller
 {
+
+    public function index()
+    {
+        $listings = Listing::latest()->take(10)->get();
+        return view('welcome', compact('listings'));
+    }
     public function store(Request $request)
     {
         $validated = $request->validate([
