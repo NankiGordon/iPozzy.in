@@ -10,7 +10,7 @@
                                      $images = $listing->images; // No need for json_decode()
                                  @endphp
                                  @if (!empty($images) && is_array($images))
-                                    <img src="{{ asset('storage/' . $images[0]) }}" class="card-img-top" alt="Property Image">
+                                    <img src="{{ asset('storage/images/' . $images[0]) }}" class="card-img-top" alt="Property Image">
                                 @endif
                                 <div class="card-body">
                                      <h5 class="card-title">{{ $listing->property_name }}</h5>
