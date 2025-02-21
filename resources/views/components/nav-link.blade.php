@@ -70,172 +70,173 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('listings.store') }}" method="POST">
-                    @csrf
-                    <!-- Property Name -->
-                    <div class="mb-3">
-                        <label for="propertyName" class="form-label">Property Name</label>
-                        <input type="text" id="propertyName" class="form-control" placeholder="Enter property name">
+            <form action="{{ route('listings.store') }}" method="POST">
+                @csrf
+                <!-- Property Name -->
+                <div class="mb-3">
+                    <label for="propertyName" class="form-label">Property Name</label>
+                    <input type="text" id="propertyName" name="property_name" class="form-control" placeholder="Enter property name"
+                        required>
+                </div>
+
+                <!-- Property Type -->
+                <div class="mb-3">
+                    <label for="propertyType" class="form-label">Property Type</label>
+                    <select id="propertyType" name="property_type" class="form-select" required>
+                        <option selected disabled>Choose Property Type</option>
+                        <option>Apartment</option>
+                        <option>House</option>
+                        <option>Townhouse</option>
+                        <option>Commercial</option>
+                        <option>Backroom</option>
+                        <option>Shack</option>
+                        <option>Room to Rent</option>
+                        <option>Flatlet</option>
+                        <option>Garden Cottage</option>
+                        <option>Shared Accommodation</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <!-- Description Field -->
+                <div class="mb-3">
+                    <label for="propertyDescription" class="form-label">Property Description</label>
+                    <textarea id="propertyDescription" name="description" class="form-control" rows="4"
+                        placeholder="Provide a detailed description of the property..."></textarea>
+                </div>
+
+                <!-- Number of Bedrooms -->
+                <div class="mb-3">
+                    <label for="bedrooms" class="form-label">Number of Bedrooms</label>
+                    <input type="number" id="bedrooms" name="bedrooms" class="form-control" min="1"
+                        placeholder="Enter number of bedrooms" required>
+                </div>
+
+                <!-- Number of Bathrooms -->
+                <div class="mb-3">
+                    <label for="numBathrooms" class="form-label">Number of Bathrooms</label>
+                    <input type="number" id="numBathrooms" name="bathrooms" class="form-control"
+                        placeholder="Enter number of bathrooms" min="1">
+                </div>
+
+                <!-- Size -->
+                <div class="mb-3">
+                    <label for="size" class="form-label">Size in Square Meters</label>
+                    <input type="number" id="size" name="size" class="form-control" placeholder="Enter size in m²" min="1" step="1"
+                        required>
+                </div>
+
+                <!-- Amenities Checkboxes -->
+                <div class="mb-3">
+                    <label class="form-label">Amenities</label><br>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="wifi" name="amenities[]" value="wifi">
+                        <label class="form-check-label" for="wifi">WiFi</label>
                     </div>
-
-                    <!-- Property Type -->
-                    <div class="mb-3">
-                        <label for="propertyType" class="form-label">Property Type</label>
-                        <select id="propertyType" class="form-select">
-                            <option selected disabled>Choose Property Type</option>
-                            <option>Apartment</option>
-                            <option>House</option>
-                            <option>Townhouse</option>
-                            <option>Commercial</option>
-                            <option>Backroom</option>
-                            <option>Shack</option>
-                            <option>Room to Rent</option>
-                            <option>Flatlet</option>
-                            <option>Garden Cottage</option>
-                            <option>Shared Accommodation</option>
-                            <option>Other</option>
-                        </select>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="parking" name="amenities[]" value="parking">
+                        <label class="form-check-label" for="parking">Parking</label>
                     </div>
-
-                    <!-- Description Field -->
-                    <div class="mb-3">
-                        <label for="propertyDescription" class="form-label">Property Description</label>
-                        <textarea id="propertyDescription" class="form-control" rows="4"
-                            placeholder="Provide a detailed description of the property..."></textarea>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="pool" name="amenities[]" value="pool">
+                        <label class="form-check-label" for="pool">Swimming Pool</label>
                     </div>
-
-
-                        <!-- Number of Bedrooms -->
-                        <div class="mb-3">
-                            <label for="bedrooms" class="form-label">Number of Bedrooms</label>
-                            <input type="number" id="bedrooms" class="form-control" min="1" placeholder="Enter number of bedrooms" required>
-                        </div>
-
-                        <!-- Number of Bathrooms -->
-                        <div class="mb-3">
-                            <label for="numBathrooms" class="form-label">Number of Bathrooms</label>
-                            <input type="number" id="numBathrooms" class="form-control" placeholder="Enter number of bathrooms" min="1">
-                        </div>
-
-                        <!-- size -->
-                        <div class="mb-3">
-                            <label for="size" class="form-label">Size in Square Meters</label>
-                            <input type="number" id="size" class="form-control" placeholder="Enter size in m²" min="1" step="1" required>
-                        </div>
-
-
-                    <!-- Amenities Checkboxes -->
-                    <div class="mb-3">
-                        <label class="form-label">Amenities</label><br>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="wifi" value="wifi">
-                            <label class="form-check-label" for="wifi">WiFi</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="parking" value="parking">
-                            <label class="form-check-label" for="parking">Parking</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="pool" value="pool">
-                            <label class="form-check-label" for="pool">Swimming Pool</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="security" value="security">
-                            <label class="form-check-label" for="security">Security</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="petFriendly" value="petFriendly">
-                            <label class="form-check-label" for="petFriendly">Pet Friendly</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="laundry" value="laundry">
-                            <label class="form-check-label" for="laundry">Laundry Facilities</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="furnished" value="furnished">
-                            <label class="form-check-label" for="furnished">Furnished</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="garden" value="garden">
-                            <label class="form-check-label" for="garden">Garden</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="electricity" value="electricity">
-                            <label class="form-check-label" for="electricity">Electricity Included</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="water" value="water">
-                            <label class="form-check-label" for="water">Water Included</label>
-                        </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="security" name="amenities[]" value="security">
+                        <label class="form-check-label" for="security">Security</label>
                     </div>
-
-                    <!-- Address Fields -->
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="address1" class="form-label">Address 1 <span class="text-danger">*</span></label>
-                            <input type="text" id="address1" class="form-control" placeholder="Street Address" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="address2" class="form-label">Address 2</label>
-                            <input type="text" id="address2" class="form-control" placeholder="Apartment, suite, etc.">
-                        </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="petFriendly" name="amenities[]" value="petFriendly">
+                        <label class="form-check-label" for="petFriendly">Pet Friendly</label>
                     </div>
-
-                    <!-- Suburb & City -->
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="suburb" class="form-label">Suburb <span class="text-danger">*</span></label>
-                            <input type="text" id="suburb" class="form-control" placeholder="Enter suburb" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="city" class="form-label">City</label>
-                            <input type="text" id="city" class="form-control" placeholder="Enter city">
-                        </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="laundry" name="amenities[]" value="laundry">
+                        <label class="form-check-label" for="laundry">Laundry Facilities</label>
                     </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="furnished" name="amenities[]" value="furnished">
+                        <label class="form-check-label" for="furnished">Furnished</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="garden" name="amenities[]" value="garden">
+                        <label class="form-check-label" for="garden">Garden</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="electricity" name="amenities[]" value="electricity">
+                        <label class="form-check-label" for="electricity">Electricity Included</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="water" name="amenities[]" value="water">
+                        <label class="form-check-label" for="water">Water Included</label>
+                    </div>
+                </div>
 
-                    <!-- Province & Postal Code -->
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="province" class="form-label">Province <span class="text-danger">*</span></label>
-                            <div class="dropdown">
-                                <select id="province" class="form-select">
-                                    <option selected disabled>Choose Province</option>
-                                    <option>Eastern Cape</option>
-                                    <option>Free State</option>
-                                    <option>Gauteng</option>
-                                    <option>KwaZulu-Natal</option>
-                                    <option>Limpopo</option>
-                                    <option>Mpumalanga</option>
-                                    <option>Northern Cape</option>
-                                    <option>North West</option>
-                                    <option>Western Cape</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="postal" class="form-label">Postal Code <span class="text-danger">*</span></label>
-                            <input type="text" id="postal" class="form-control" placeholder="Enter postal code" required>
+                <!-- Address Fields -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="address1" class="form-label">Address 1 <span class="text-danger">*</span></label>
+                        <input type="text" id="address1" name="address1" class="form-control" placeholder="Street Address" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="address2" class="form-label">Address 2</label>
+                        <input type="text" id="address2" name="address2" class="form-control" placeholder="Apartment, suite, etc.">
+                    </div>
+                </div>
+
+                <!-- Suburb & City -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="suburb" class="form-label">Suburb <span class="text-danger">*</span></label>
+                        <input type="text" id="suburb" name="suburb" class="form-control" placeholder="Enter suburb" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" id="city" name="city" class="form-control" placeholder="Enter city">
+                    </div>
+                </div>
+
+                <!-- Province & Postal Code -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="province" class="form-label">Province <span class="text-danger">*</span></label>
+                        <div class="dropdown">
+                            <select id="province" name="province" class="form-select" required>
+                                <option selected disabled>Choose Province</option>
+                                <option>Eastern Cape</option>
+                                <option>Free State</option>
+                                <option>Gauteng</option>
+                                <option>KwaZulu-Natal</option>
+                                <option>Limpopo</option>
+                                <option>Mpumalanga</option>
+                                <option>Northern Cape</option>
+                                <option>North West</option>
+                                <option>Western Cape</option>
+                            </select>
                         </div>
                     </div>
-
-                    <!-- Available Date -->
-                    <div class="mb-3">
-                        <label for="availableDate" class="form-label">Available Date</label>
-                        <input type="date" id="availableDate" class="form-control">
+                    <div class="col-md-6 mb-3">
+                        <label for="postal" class="form-label">Postal Code <span class="text-danger">*</span></label>
+                        <input type="text" id="postal" name="postal" class="form-control" placeholder="Enter postal code" required>
                     </div>
+                </div>
 
+                <!-- Available Date -->
+                <div class="mb-3">
+                    <label for="availableDate" class="form-label">Available Date</label>
+                    <input type="date" id="availableDate" name="available_date" class="form-control">
+                </div>
 
-                    <!-- Price -->
-                    <div class="mb-3">
-                        <label for="price" class="form-label">Price</label>
-                        <input type="number" id="price" class="form-control" placeholder="Enter price">
-                    </div>
+                <!-- Price -->
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" id="price" name="price" class="form-control" placeholder="Enter price">
+                </div>
 
-                    <!-- Submit Button -->
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Create Listing</button>
-                    </div>
-                </form>
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Create Listing</button>
+                </div>
+            </form>
             </div>
         </div>
     </div>
